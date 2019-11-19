@@ -1,0 +1,26 @@
+# Blender MTL File: 'Melynx.blend'
+# Material Count: 2
+
+newmtl polygon0_nt_mat
+Ns 154.901961
+Ka 1.000000 1.000000 1.000000
+Kd 0.000000 0.000000 0.000000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd c:\program files\steam\steamapps\common\skyrim\data\textures\monsterhunter\wildlife\neko\neko.dds
+map_Bump  Normal.png
+
+newmtl polygon2_nt_mat
+Ns 154.901961
+Ka 1.000000 1.000000 1.000000
+Kd 0.000000 0.000000 0.000000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd c:\program files\steam\steamapps\common\skyrim\data\textures\monsterhunter\wildlife\melynx\melynx.dds
+map_Bump  Normal.png
