@@ -12,10 +12,19 @@ public class NetworkPlayer : NetworkBehaviour
     
     void Start()
     {
+        Debug.Log(isServer);
         if (isServer)
+        {
+
+        } else
         {
             cat.SetActive(false);
             human1.SetActive(true);
+            transform.parent = GameObject.FindWithTag("Simeowlation").transform;
+            transform.localPosition = new Vector3(0, 0, 0);
+            transform.localRotation = Quaternion.Euler(0, 180f, 0);
+            GameObject.FindWithTag("Content").transform.localScale *= 10;
+            transform.localScale *= 0.1f;
         }
     }
 
