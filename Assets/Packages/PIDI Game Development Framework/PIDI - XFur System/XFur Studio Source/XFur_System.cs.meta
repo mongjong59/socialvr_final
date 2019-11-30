@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2a6a1400e628d384ebdce68b3654c7aa
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - skinRenderer: {instanceID: 0}
+  - database: {instanceID: 0}
+  - originalMesh: {instanceID: 0}
+  - bumpEmpty: {fileID: 2800000, guid: 2bef95333e7831641b1c7469c7b718c0, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

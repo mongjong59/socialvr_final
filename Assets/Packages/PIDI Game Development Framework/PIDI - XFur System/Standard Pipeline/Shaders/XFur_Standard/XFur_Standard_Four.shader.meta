@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 5f89c5a336256164f8e603957c027352
+timeCreated: 1530186620
+licenseType: Store
+ShaderImporter:
+  defaultTextures:
+  - _BaseTex: {instanceID: 0}
+  - _GlossSpecular: {instanceID: 0}
+  - _Normalmap: {instanceID: 0}
+  - _OcclusionMap: {instanceID: 0}
+  - _FurNoiseMap: {instanceID: 0}
+  - _FurColorMap: {instanceID: 0}
+  - _FurFXNoise: {fileID: 2800000, guid: 88a19c1d9668a504f9b76e4c14461382, type: 3}
+  - _FurData0: {instanceID: 0}
+  - _FurData1: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

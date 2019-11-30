@@ -1,0 +1,31 @@
+fileFormatVersion: 2
+guid: bb489247dba9d49469012d653e0c3b66
+timeCreated: 1530195097
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - customSkin: {fileID: 11400000, guid: 4dd4c401999398c41a496e0978e58f76, type: 2}
+  - icon0N: {fileID: 2800000, guid: 0a3ba34faf1daa14e9445c0faded3af6, type: 3}
+  - icon0A: {fileID: 2800000, guid: c2032ced9a460014394c720844cadb96, type: 3}
+  - icon1N: {fileID: 2800000, guid: 69f7c432f936c6a4d95180c3fe9f6a92, type: 3}
+  - icon1A: {fileID: 2800000, guid: c5c95d467ab97f245946325903685a0d, type: 3}
+  - icon2N: {fileID: 2800000, guid: 7c965b29e0ddcc94eaa31d187e9398ce, type: 3}
+  - icon2A: {fileID: 2800000, guid: be09aee970772bd4a985c34dbdbe8a9e, type: 3}
+  - icon3N: {fileID: 2800000, guid: f144206461075584094485e6a9c7ba9c, type: 3}
+  - icon3A: {fileID: 2800000, guid: 92357111bcbebab43894bdb27b8029b4, type: 3}
+  - icon4N: {fileID: 2800000, guid: 67c1870e04d09b945a380f35124ad560, type: 3}
+  - icon4A: {fileID: 2800000, guid: d18ceb616fbea1346af7fefa4e794067, type: 3}
+  - icon5N: {fileID: 2800000, guid: a295e2ad160aae64da0cfb3dca0f4831, type: 3}
+  - icon5A: {fileID: 2800000, guid: 183cf9ed22c78ec43801f3592cb1e949, type: 3}
+  - icon6N: {instanceID: 0}
+  - icon6A: {instanceID: 0}
+  - icon7N: {instanceID: 0}
+  - icon7A: {instanceID: 0}
+  - icon8N: {instanceID: 0}
+  - icon8A: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

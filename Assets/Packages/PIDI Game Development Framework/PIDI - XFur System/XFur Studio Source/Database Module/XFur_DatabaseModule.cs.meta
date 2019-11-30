@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 63f2a396ec504fd429f60fe3ffc58f96
+timeCreated: 1530101205
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - DynamicShellShader: {fileID: 4800000, guid: cebc198c3a5fdda4bb2b91c4b09c2e2a,
+      type: 3}
+  - DynamicShellSkin: {fileID: 4800000, guid: b81d2e62a98ad5d4bb059d4d5fe57acc, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

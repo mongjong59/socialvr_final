@@ -1,0 +1,1 @@
+The new content and demos are inside the Standard Pipeline folder. All the other demo folders are from the legacy version of XFur (1.0-1.1)

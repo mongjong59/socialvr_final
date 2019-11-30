@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26b914cfa3db5af4ba58a0f0c1474382, type: 3}
+  m_Name: DemoProfile_3
+  m_EditorClassIdentifier: 
+  profile:
+    originalMat: {fileID: 0}
+    buffOriginalMat: {fileID: 0}
+    furmatType: 0
+    furmatIndex: 0
+    furmatSamples: 16
+    furmatTriplanar: 0
+    furmatCollision: 1
+    furmatShadowsMode: 0
+    furmatReadBaseSkin: 0
+    furmatReadBaseFur: 0
+    furmatReadFurNoise: 0
+    furmatAnisoOffset: 0.5
+    furmatTriplanarScale: 0.5
+    furmatBaseTex: {fileID: 0}
+    furmatNormalmap: {fileID: 0}
+    furmatGlossSpecular: {fileID: 0}
+    furmatOcclusion: {fileID: 0}
+    furmatFurColorMap: {fileID: 2800000, guid: 94361756d200d024ebc86ad2e66eaaa1, type: 3}
+    furmatFurNoiseMap: {fileID: 2800000, guid: 358303cf74532c4479f7c0fdfaeba4e1, type: 3}
+    furmatData0: {fileID: 0}
+    furmatData1: {fileID: 0}
+    furmatPainter: {fileID: 0}
+    furmatSpecular: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+    furmatFurSpecular: {r: 0.47794116, g: 0.40736485, b: 0.28114185, a: 1}
+    furmatBaseColor: {r: 0.2205882, g: 0.14857264, b: 0.0405493, a: 1}
+    furmatFurColorA: {r: 0.5147059, g: 0.049199812, b: 0.049199812, a: 1}
+    furmatFurColorB: {r: 0.41176468, g: 0.41176468, b: 0.41176468, a: 1}
+    furmatSmoothness: 0.067
+    furmatFurSmoothness: 0.217
+    furmatFurOcclusion: 0.725
+    furmatFurCutoff: 0.25
+    furmatFurLength: 0.34
+    furmatFurThickness: 0.27
+    furmatUV1: 1
+    furmatFurUV1: 4
+    furmatFurUV2: 8
+    originalSynch: 0
+    furmatFurRim: {r: 0.42647058, g: 0.33131486, b: 0.26967993, a: 1}
+    furmatFurRimPower: 0.324
+    subRenders: []
+    furmatDirection: {x: 0.2, y: 0.2, z: 0.2, w: 0.2}
