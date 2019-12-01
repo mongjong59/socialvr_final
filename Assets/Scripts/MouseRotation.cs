@@ -1,29 +1,29 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using Mirror;
 
-public class MouseRotation : MonoBehaviour
+public class MouseRotation : NetworkBehaviour
 {
     public float sensitivity = 150f;
-    public GameObject playeCamera;
 
     float xRotation = 0f;
 
     private void Start()
     {
+        if (!isLocalPlayer) return;
         Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
     {
-        
+        if (!isLocalPlayer) return;
+
         float x = Input.GetAxis("Mouse X");
         float y = Input.GetAxis("Mouse Y");
 
         xRotation -= y;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
         transform.Rotate((Vector3.up * x) * sensitivity * Time.deltaTime);
-    
-        playeCamera.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
+
+        Camera.current.gameObject.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
     }
 }
