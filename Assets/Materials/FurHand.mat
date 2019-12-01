@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: FurHand
-  m_Shader: {fileID: 4800000, guid: 423c19e6434ec7e439ce994bb4b00e4e, type: 3}
+  m_Shader: {fileID: 4800000, guid: 3752a0588e318e1468261512cc342a7e, type: 3}
   m_ShaderKeywords: ANISOTROPIC_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0

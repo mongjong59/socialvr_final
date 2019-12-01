@@ -5,7 +5,9 @@ namespace Mirror
    public class NetworkSetup : MonoBehaviour
     {
         NetworkManager _networkManager;
-        
+
+        public bool server;
+
         void Awake()
         {
             _networkManager = GetComponent<NetworkManager>();
@@ -13,20 +15,28 @@ namespace Mirror
         
         void Start()
         {
-            if (!NetworkServer.active)
+            if (server)
             {
-                if (Application.platform != RuntimePlatform.WebGLPlayer)
-                {
-                    _networkManager.StartHost();
-                }
+                InvokeRepeating("startServer", 0f, 1f);
+            } else
+            {
+                InvokeRepeating("startClient", 0f, 1f);
             }
+        }
 
-            if (NetworkServer.active && !NetworkClient.active)
+        void startServer()
+        {
+            if (Application.platform != RuntimePlatform.WebGLPlayer && !NetworkServer.active)
             {
-                if (!NetworkClient.active)
-                {
-                    _networkManager.StartClient();
-                }
+                _networkManager.StartHost();
+            }
+        }
+
+        void startClient()
+        {
+            if (!NetworkClient.isConnected)
+            {
+                _networkManager.StartClient();
             }
         }
     }

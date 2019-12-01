@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Mirror;
 
 public class NetworkedWasdController : NetworkBehaviour
@@ -11,10 +9,8 @@ public class NetworkedWasdController : NetworkBehaviour
     [SerializeField]
     float _rotateSpeed = 1f;
 
-    // Update is called once per frame
     void Update()
     {
-        //if you are not a local player then don't update, because server is syncing my position
         if (!isLocalPlayer) return;
 
         if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl)) 
