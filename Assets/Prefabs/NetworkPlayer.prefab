@@ -2393,7 +2393,7 @@ GameObject:
   - component: {fileID: 4763464011244656730}
   - component: {fileID: 4965086691009173305}
   - component: {fileID: 1272220931635148439}
-  - component: {fileID: 3678858030479722773}
+  - component: {fileID: 7408574876657198317}
   - component: {fileID: 1448386759981370915}
   - component: {fileID: 5700574983960652699}
   m_Layer: 0
@@ -2452,6 +2452,7 @@ MonoBehaviour:
   cat: {fileID: 2415379384460565171}
   human1: {fileID: 0}
   human2: {fileID: 0}
+  debugPlayerType: 2
 --- !u!143 &1272220931635148439
 CharacterController:
   m_ObjectHideFlags: 0
@@ -2470,7 +2471,7 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3678858030479722773
+--- !u!114 &7408574876657198317
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2479,12 +2480,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1341278787383359197}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0945d0bbeb58a4df0b1ff63b65125f83, type: 3}
+  m_Script: {fileID: 11500000, guid: 136fbaadd4fb64778be78a0be700971b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  _moveSpeed: 0.02
+  _moveSpeed: 0.05
   _rotateSpeed: 1
 --- !u!114 &1448386759981370915
 MonoBehaviour:
@@ -6040,7 +6041,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4597348380661957195}
   m_Layer: 0
-  m_Name: Human 1
+  m_Name: Human1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

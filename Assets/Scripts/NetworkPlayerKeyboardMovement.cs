@@ -1,25 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using Mirror;
 
-public class WasdController : MonoBehaviour
+public class NetworkPlayerKeyboardMovement : NetworkBehaviour
 {
     [SerializeField]
-    float _moveSpeed = 0.1f;
+    float _moveSpeed = 0.05f;
 
     [SerializeField]
     float _rotateSpeed = 1f;
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl)) 
-            return;
+        if (!isLocalPlayer) return;
 
         var move = Vector3.zero;
         var rotate = 0f;
 
-        //keyboard inputs
         if (Input.GetKey(KeyCode.W))
             move += transform.forward;
         if (Input.GetKey(KeyCode.A))
@@ -35,13 +31,9 @@ public class WasdController : MonoBehaviour
             rotate -= 1;
 
         var moveSpeed = move * _moveSpeed;
-
         if (Input.GetKey(KeyCode.LeftShift))
             moveSpeed *= 2;
-
-        //update rotation vector
         transform.Rotate(Vector3.up, _rotateSpeed * rotate);
-        //updating position vector
         transform.position += moveSpeed;
     }
 }

@@ -8,14 +8,25 @@ public class NetworkPlayer : NetworkBehaviour
     public GameObject cat;
     public GameObject human1;
     public GameObject human2;
-    
+
+    public enum DebugPlayerType { None, Cat, Human1, Human2, God }
+    public DebugPlayerType debugPlayerType;
+
     void Start()
     {
-        string[] PLAYER_TYPES = {"Cat", "Human 1", "Human 2", "God"};
-        string playerType = NetworkUtilities.PlayerType(this);
-
-        Debug.Log(playerType);
-            transform.Find(playerType).gameObject.SetActive(true);
+        string[] PLAYER_TYPES = {"Cat", "Human1", "Human2", "God"};
+        string playerType;
+        if (debugPlayerType != DebugPlayerType.None)
+        {
+            playerType = debugPlayerType.ToString();
+            Debug.Log(playerType);
+        } else
+        {
+            playerType = NetworkPlayerUtilities.PlayerType(this);
+        }
+         
+        
+        transform.Find(playerType).gameObject.SetActive(true);
 
         //if (playerType == "Cat")
         //{

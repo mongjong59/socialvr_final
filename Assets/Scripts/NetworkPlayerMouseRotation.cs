@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Mirror;
 
-public class MouseRotation : NetworkBehaviour
+public class NetworkPlayerMouseRotation : NetworkBehaviour
 {
     public float sensitivity = 150f;
 

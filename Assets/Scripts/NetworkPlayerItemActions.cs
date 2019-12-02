@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Mirror;
 
-public class ItemActions : NetworkBehaviour
+public class NetworkPlayerItemActions : NetworkBehaviour
 {
     GameObject rod;
 
@@ -14,7 +14,7 @@ public class ItemActions : NetworkBehaviour
     {
 
 
-        //if (NetworkUtilities.LocalPlayerType() != "Cat")
+        //if (NetworkPlayerUtilities.LocalPlayerType() != "Cat")
         //    return;
 
         if (!isLocalPlayer)

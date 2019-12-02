@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class NetworkUtilities : MonoBehaviour
+public class NetworkPlayerUtilities : MonoBehaviour
 {
     public static string[] PlayerTypes()
     {
