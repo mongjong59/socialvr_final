@@ -24,8 +24,6 @@ public class NetworkPlayerMouseRotation : NetworkBehaviour
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
         transform.Rotate((Vector3.up * x) * sensitivity * Time.deltaTime);
 
-        Camera camera = GetComponentInChildren<Camera>();
-
-        camera.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
+        NetworkPlayerUtilities.PlayerCamera(gameObject).transform.parent.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
     }
 }

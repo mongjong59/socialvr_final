@@ -2452,7 +2452,7 @@ MonoBehaviour:
   cat: {fileID: 2415379384460565171}
   human1: {fileID: 0}
   human2: {fileID: 0}
-  debugPlayerType: 2
+  debugPlayerType: 0
 --- !u!143 &1272220931635148439
 CharacterController:
   m_ObjectHideFlags: 0

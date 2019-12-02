@@ -5,7 +5,7 @@ public class NetworkPlayerUtilities : MonoBehaviour
 {
     public static string[] PlayerTypes()
     {
-        string[] playerTypes = { "Cat", "Human 1", "Human 2", "God" };
+        string[] playerTypes = { "Cat", "Human1", "Human2", "God" };
         return playerTypes;
     }
 
@@ -20,15 +20,22 @@ public class NetworkPlayerUtilities : MonoBehaviour
                 break;
             }
         }
-        return PlayerType(localPlayer);
+        return PlayerType(localPlayer.gameObject);
     }
 
-    public static string PlayerType(NetworkPlayer player)
+    public static string PlayerType(GameObject player)
     {
     
         int playerIndex = Array.IndexOf(Players(), player.GetComponent<NetworkPlayer>());
         return PlayerTypes()[playerIndex];    
         
+    }
+
+    public static Camera PlayerCamera(GameObject player)
+    {
+        Transform wrapper = player.transform.Find(PlayerType(player));
+        Transform centerEyeAnchor = wrapper.Find("OVRCameraRig").Find("TrackingSpace").Find("CenterEyeAnchor");
+        return centerEyeAnchor.GetComponent<Camera>();
     }
 
     private static NetworkPlayer[] Players()

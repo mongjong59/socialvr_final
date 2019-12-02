@@ -1,6 +1,7 @@
 ﻿using System;
 using Mirror;
 using UnityEngine;
+using NPU = NetworkPlayerUtilities;
 
 public class NetworkPlayer : NetworkBehaviour
 {
@@ -14,7 +15,6 @@ public class NetworkPlayer : NetworkBehaviour
 
     void Start()
     {
-        string[] PLAYER_TYPES = {"Cat", "Human1", "Human2", "God"};
         string playerType;
         if (debugPlayerType != DebugPlayerType.None)
         {
@@ -22,11 +22,16 @@ public class NetworkPlayer : NetworkBehaviour
             Debug.Log(playerType);
         } else
         {
-            playerType = NetworkPlayerUtilities.PlayerType(this);
+            playerType = NPU.PlayerType(gameObject);
         }
-         
-        
+
         transform.Find(playerType).gameObject.SetActive(true);
+
+        // disable camera of non-local player
+        if (!isLocalPlayer)
+        {
+            NPU.PlayerCamera(gameObject).enabled = false;
+        }
 
         //if (playerType == "Cat")
         //{
@@ -39,30 +44,27 @@ public class NetworkPlayer : NetworkBehaviour
         //    }
         //}
 
-        if (playerType == PLAYER_TYPES[1] || playerType == PLAYER_TYPES[2])
-        {
-            transform.parent = GameObject.FindWithTag("Simeowlation").transform;
-            transform.localRotation = Quaternion.Euler(0, 180f, 0);
-            GameObject.FindWithTag("Control Room").transform.localScale *= 10;
-            transform.localScale *= 0.1f;
-            if (playerType == PLAYER_TYPES[1])
-            {
-                human1.SetActive(true);
-                transform.localPosition = new Vector3(0, 0, 0);
-            }
-            if (playerType == PLAYER_TYPES[2])
-            {
-                human2.SetActive(true);
-                transform.localPosition = new Vector3(0, 0, 0);
-            }
-            
-        }
+        //if (playerType == PLAYER_TYPES[1] || playerType == PLAYER_TYPES[2])
+        //{
+        //    transform.parent = GameObject.FindWithTag("Simeowlation").transform;
+        //    transform.localRotation = Quaternion.Euler(0, 180f, 0);
+        //    GameObject.FindWithTag("Control Room").transform.localScale *= 10;
+        //    transform.localScale *= 0.1f;
+        //    if (playerType == PLAYER_TYPES[1])
+        //    {
+        //        human1.SetActive(true);
+        //        transform.localPosition = new Vector3(0, 0, 0);
+        //    }
+        //    if (playerType == PLAYER_TYPES[2])
+        //    {
+        //        human2.SetActive(true);
+        //        transform.localPosition = new Vector3(0, 0, 0);
+        //    }
 
-        if (!isLocalPlayer)
-        {
-            GetComponentInChildren<Camera>().gameObject.SetActive(false);
-        }
+        //}
 
-        Debug.Log(GameObject.Find("Rod").GetComponent<NetworkIdentity>().hasAuthority);
+
+
+        // Debug.Log(GameObject.Find("Rod").GetComponent<NetworkIdentity>().hasAuthority);
     }
 }
