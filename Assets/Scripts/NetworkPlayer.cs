@@ -14,8 +14,8 @@ public class NetworkPlayer : NetworkBehaviour
         string[] PLAYER_TYPES = {"Cat", "Human 1", "Human 2", "God"};
         string playerType = NetworkUtilities.PlayerType(this);
 
-        if (playerType != PLAYER_TYPES[0])
-            transform.Find(PLAYER_TYPES[0]).gameObject.SetActive(false);
+        Debug.Log(playerType);
+            transform.Find(playerType).gameObject.SetActive(true);
 
         //if (playerType == "Cat")
         //{

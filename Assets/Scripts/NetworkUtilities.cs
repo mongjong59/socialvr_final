@@ -3,6 +3,12 @@ using UnityEngine;
 
 public class NetworkUtilities : MonoBehaviour
 {
+    public static string[] PlayerTypes()
+    {
+        string[] playerTypes = { "Cat", "Human 1", "Human 2", "God" };
+        return playerTypes;
+    }
+
     public static string LocalPlayerType()
     {
         NetworkPlayer localPlayer = new NetworkPlayer();
@@ -21,19 +27,8 @@ public class NetworkUtilities : MonoBehaviour
     {
     
         int playerIndex = Array.IndexOf(Players(), player.GetComponent<NetworkPlayer>());
-        switch (playerIndex)
-        {
-            case 0:
-                return "God";
-            case 1:
-                return "Cat";
-            case 2:
-                return "Human 1";
-            case 3:
-                return "Human 2";
-            default:
-                return "Unknown";
-        }
+        return PlayerTypes()[playerIndex];    
+        
     }
 
     private static NetworkPlayer[] Players()
