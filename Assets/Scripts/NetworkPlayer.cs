@@ -5,7 +5,7 @@ using NPU = NetworkPlayerUtilities;
 
 public class NetworkPlayer : NetworkBehaviour
 {
-    public enum DebugPlayerType { None, Cat, Human1, Human2, God }
+    public enum DebugPlayerType { None, Cat, Human, God }
     public DebugPlayerType debugPlayerType;
 
     void Start()
@@ -45,10 +45,11 @@ public class NetworkPlayer : NetworkBehaviour
 
         string order = "";
         if (playerType == "Human") {
-            order = (NPU.PlayerIndex(gameObject) + 1).ToString();
+            order = NPU.PlayerIndex(gameObject).ToString();
         }
-        Transform startPoint = GameObject.Find(playerType + order + "StartPoint").transform;
         Debug.Log(playerType + order + "StartPoint");
+        Transform startPoint = GameObject.Find(playerType + order + "StartPoint").transform;
+        
         if (startPoint)
         {
             transform.parent = startPoint.parent;
