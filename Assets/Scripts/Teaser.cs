@@ -12,5 +12,7 @@ public class Teaser : NetworkBehaviour
             food.gameObject.SetActive(false);
         };
         transform.Find("Hook").gameObject.SetActive(true);
+        
+        GameObject.Find("TeaserTrigger").GetComponent<BoxCollider>().enabled = false;
     }
 }

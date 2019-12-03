@@ -1,11 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using Mirror;
 
-public class GetFood : MonoBehaviour
+public class GetFood : NetworkBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
+        if (!isServer) return;
+        
         string triggerName = other.gameObject.name;
 
         if (triggerName == "TeaserTrigger") {

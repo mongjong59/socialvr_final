@@ -26,29 +26,42 @@ public class NetworkPlayer : NetworkBehaviour
         GameObject wrapper = transform.Find(playerType).gameObject;
         wrapper.SetActive(true);
         
+        var ovrCameraRig = wrapper.transform.Find("OVRCameraRig").gameObject;
+        var centerEyeAnchor = NPU.PlayerCenterEyeAnchor(gameObject);
+        
         if (isLocalPlayer)
         {
             wrapper.transform.Find("Avatar").gameObject.SetActive(false);
+            GameObject canvas = GameObject.Find("Canvas");
+            canvas.transform.parent = centerEyeAnchor.transform;
+            canvas.GetComponent<Canvas>().worldCamera = centerEyeAnchor.GetComponent<Camera>();
+            canvas.transform.localPosition = new Vector3(-0.39f, 0.25f, 0.67f);
+
+            if (playerType == "Cat")
+            {
+                canvas.SetActive(false);
+            }
             
             if (playerType.StartsWith("Human"))
             {
-                // GameObject.Find("ControlRoom").SetActive(false);
+                GameObject.Find("ControlRoom").SetActive(false);
                 Debug.Log(GameObject.Find("Simeowlation").transform.Find("HumanView"));
                 GameObject.Find("Simeowlation").transform.Find("HumanView").gameObject.SetActive(true);
             }
         } else
         {
-            NPU.PlayerCenterEyeAnchor(gameObject).GetComponent<Camera>().enabled = false;
-            NPU.PlayerCenterEyeAnchor(gameObject).GetComponent<AudioListener>().enabled = false;
+            centerEyeAnchor.GetComponent<Camera>().enabled = false;
+            centerEyeAnchor.GetComponent<AudioListener>().enabled = false;
             wrapper.transform.Find("Hands").gameObject.SetActive(false);
-            var ovrCameraRig = wrapper.transform.Find("OVRCameraRig").gameObject;
+            
             ovrCameraRig.GetComponent<OVRCameraRig>().enabled = false;
             ovrCameraRig.GetComponent<OVRHeadsetEmulator>().enabled = false;
         }
 
         string order = "";
         if (playerType == "Human") {
-            order = NPU.PlayerIndex(gameObject).ToString();
+            // order = NPU.PlayerIndex(gameObject);
+            order = (NPU.PlayerIndex(gameObject) + 1).ToString();
         }
         Debug.Log(playerType + order + "StartPoint");
         var startPoint = GameObject.Find(playerType + order + "StartPoint");
@@ -63,9 +76,4 @@ public class NetworkPlayer : NetworkBehaviour
 
         // Debug.Log(GameObject.Find("Rod").GetComponent<NetworkIdentity>().hasAuthority);
     }
-
-    // [Command]
-    // public void CmdIncrementScore(int index) {
-    //    scores[index] += 1;
-    // }
 }

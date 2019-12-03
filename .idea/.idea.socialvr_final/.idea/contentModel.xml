@@ -1688,7 +1688,6 @@
         <e p="Scripts" t="Include">
           <e p="GetFood.cs" t="Include" />
           <e p="Hook.cs" t="Include" />
-          <e p="NetworkedGameManager.cs" t="Include" />
           <e p="NetworkedObject.cs" t="Include" />
           <e p="NetworkedPlayer.cs" t="Include" />
           <e p="NetworkGameController.cs" t="Include" />

@@ -7,7 +7,6 @@ public class Hook : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         string triggerName = other.gameObject.name;
-        Debug.Log(triggerName);
         var food = GameObject.Find("Food").transform;
         var activeFood = food.Find(triggerName);
         if (!activeFood) return; 
@@ -16,6 +15,7 @@ public class Hook : MonoBehaviour
             child.gameObject.SetActive(false);
         }
         activeFood.gameObject.SetActive(true);
+        GameObject.Find("TeaserTrigger").GetComponent<BoxCollider>().enabled = true;
         gameObject.SetActive(false);
     }
 }
