@@ -37,15 +37,14 @@ public class NetworkPlayer : NetworkBehaviour
             canvas.GetComponent<Canvas>().worldCamera = centerEyeAnchor.GetComponent<Camera>();
             canvas.transform.localPosition = new Vector3(-0.39f, 0.25f, 0.67f);
 
-            if (playerType == "Cat")
-            {
-                canvas.SetActive(false);
-            }
+            // if (playerType == "Cat")
+            // {
+            //    canvas.SetActive(false);
+            // }
             
             if (playerType.StartsWith("Human"))
             {
                 GameObject.Find("ControlRoom").SetActive(false);
-                Debug.Log(GameObject.Find("Simeowlation").transform.Find("HumanView"));
                 GameObject.Find("Simeowlation").transform.Find("HumanView").gameObject.SetActive(true);
             }
         } else

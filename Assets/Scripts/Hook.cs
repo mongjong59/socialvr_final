@@ -16,6 +16,6 @@ public class Hook : MonoBehaviour
         }
         activeFood.gameObject.SetActive(true);
         GameObject.Find("TeaserTrigger").GetComponent<BoxCollider>().enabled = true;
-        gameObject.SetActive(false);
+        // gameObject.SetActive(false);
     }
 }
