@@ -1690,7 +1690,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   debugPlayerType: 0
-  score: 0
+  scores: 000000000000000000000000
 --- !u!143 &1272220931635148439
 CharacterController:
   m_ObjectHideFlags: 0
@@ -3231,7 +3231,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2373315822937754240}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 0.036, y: 1.527, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2612589444850905866}
@@ -6393,7 +6393,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7051194919331858940
 Transform:
   m_ObjectHideFlags: 0
@@ -10435,7 +10435,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7181721650504651029}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.8387, z: 0}
+  m_LocalPosition: {x: -0.018, y: 0.066, z: 0}
   m_LocalScale: {x: 0.017975051, y: 0.017975051, z: 0.017975051}
   m_Children: []
   m_Father: {fileID: 3081961606839272902}
@@ -10456,7 +10456,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7181721650504651029}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
