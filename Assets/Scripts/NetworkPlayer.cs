@@ -5,11 +5,6 @@ using NPU = NetworkPlayerUtilities;
 
 public class NetworkPlayer : NetworkBehaviour
 {
-    public GameObject god;
-    public GameObject cat;
-    public GameObject human1;
-    public GameObject human2;
-
     public enum DebugPlayerType { None, Cat, Human1, Human2, God }
     public DebugPlayerType debugPlayerType;
 
@@ -30,24 +25,24 @@ public class NetworkPlayer : NetworkBehaviour
         // disable camera of non-local player
         if (!isLocalPlayer)
         {
-            NPU.PlayerCamera(gameObject).enabled = false;
+            NPU.PlayerCenterEyeAnchor(gameObject).GetComponent<Camera>().enabled = false;
+            NPU.PlayerCenterEyeAnchor(gameObject).GetComponent<AudioListener>().enabled = false;
         }
 
-        //if (playerType == "Cat")
-        //{
-        //    cat.SetActive(true);
-        //    if (isServer)
-        //    {
-        //        Debug.Log("foobar");
-        //        GameObject.Find("Rod").GetComponent<NetworkIdentity>().RemoveClientAuthority();
-        //        GameObject.Find("Rod").GetComponent<NetworkIdentity>().AssignClientAuthority(GetComponent<NetworkIdentity>().connectionToClient); 
-        //    }
-        //}
+        Transform startPoint = GameObject.Find(playerType + "StartPoint").transform;
+        if (startPoint)
+        {
+            transform.parent = startPoint.parent;
+            transform.localPosition = startPoint.localPosition;
+            transform.localRotation = startPoint.localRotation;
+        }
 
-        //if (playerType == PLAYER_TYPES[1] || playerType == PLAYER_TYPES[2])
-        //{
-        //    transform.parent = GameObject.FindWithTag("Simeowlation").transform;
-        //    transform.localRotation = Quaternion.Euler(0, 180f, 0);
+        if (playerType.StartsWith("Human"))
+        {
+            // GameObject.Find("ControlRoom").SetActive(false);
+            Debug.Log(GameObject.Find("Simeowlation").transform.Find("HumanView"));
+            GameObject.Find("Simeowlation").transform.Find("HumanView").gameObject.SetActive(true);
+        }
         //    GameObject.FindWithTag("Control Room").transform.localScale *= 10;
         //    transform.localScale *= 0.1f;
         //    if (playerType == PLAYER_TYPES[1])

@@ -3,42 +3,43 @@ using Mirror;
 
 public class NetworkPlayerItemActions : NetworkBehaviour
 {
-    GameObject rod;
+    GameObject _rod;
 
     void Awake()
     {
-        rod = GameObject.Find("Rod");
+        _rod = GameObject.Find("Rod");
     }
 
     void Update()
     {
-
-
-        //if (NetworkPlayerUtilities.LocalPlayerType() != "Cat")
-        //    return;
-
-        if (!isLocalPlayer)
+        if (!Input.GetKeyDown("space"))
             return;
-
-        if (Input.GetKeyDown("space"))
+        if (!(NetworkPlayerUtilities.LocalPlayerType() == "Cat" && isLocalPlayer))
+            return;
+        
+        Vector3 diff = transform.position - _rod.transform.position;
+        diff.y = 0;
+        float distance = diff.magnitude;
+        Debug.Log(distance);
+        if (distance < 2.5f)
         {
-            Vector3 diff = transform.position - rod.transform.position;
-            diff.y = 0;
-            float distance = diff.magnitude;
-            Debug.Log(distance);
-            if (distance < 2.5f)
-            {
-                Camera camera = GetComponentInChildren<Camera>();
-                rod.transform.parent = camera.transform;
-                rod.transform.localPosition = new Vector3(0.22f, 0, 0.43f);
-                rod.transform.localRotation = Quaternion.Euler(66f, -23f, 0);
-            }
+            CmdSetRodParent();
+            _rod.transform.localPosition = new Vector3(0.22f, 0, 0.43f);
+            _rod.transform.localRotation = Quaternion.Euler(66f, -23f, 0);
         }
+        
     }
 
+    // [Command]
+    // public void CmdSetRodAuthority()
+    // {
+    //     _rod.GetComponent<NetworkIdentity>().AssignClientAuthority(connectionToServer); 
+    // }
+
     [Command]
-    public void CmdSetRodAuthority()
+    void CmdSetRodParent()
     {
-        rod.GetComponent<NetworkIdentity>().AssignClientAuthority(connectionToServer); 
+        GameObject centerEyeAnchor = NetworkPlayerUtilities.PlayerCenterEyeAnchor(gameObject);
+        _rod.transform.parent = centerEyeAnchor.transform;
     }
 }

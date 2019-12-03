@@ -5,7 +5,7 @@ public class NetworkPlayerMouseRotation : NetworkBehaviour
 {
     public float sensitivity = 150f;
 
-    float xRotation = 0f;
+    float _xRotation = 0f;
 
     private void Start()
     {
@@ -20,10 +20,10 @@ public class NetworkPlayerMouseRotation : NetworkBehaviour
         float x = Input.GetAxis("Mouse X");
         float y = Input.GetAxis("Mouse Y");
 
-        xRotation -= y;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
-        transform.Rotate((Vector3.up * x) * sensitivity * Time.deltaTime);
+        _xRotation -= y;
+        _xRotation = Mathf.Clamp(_xRotation, -90f, 90f);
+        transform.Rotate(Time.deltaTime * x * sensitivity * Vector3.up);
 
-        NetworkPlayerUtilities.PlayerCamera(gameObject).transform.parent.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
+        NetworkPlayerUtilities.PlayerCenterEyeAnchor(gameObject).transform.parent.transform.localRotation = Quaternion.Euler(_xRotation, 0, 0);
     }
 }

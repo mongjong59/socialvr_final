@@ -31,11 +31,11 @@ public class NetworkPlayerUtilities : MonoBehaviour
         
     }
 
-    public static Camera PlayerCamera(GameObject player)
+    public static GameObject PlayerCenterEyeAnchor(GameObject player)
     {
         Transform wrapper = player.transform.Find(PlayerType(player));
-        Transform centerEyeAnchor = wrapper.Find("OVRCameraRig").Find("TrackingSpace").Find("CenterEyeAnchor");
-        return centerEyeAnchor.GetComponent<Camera>();
+        Transform centerEyeAnchorTransform = wrapper.Find("OVRCameraRig").Find("TrackingSpace").Find("CenterEyeAnchor");
+        return centerEyeAnchorTransform.gameObject;
     }
 
     private static NetworkPlayer[] Players()
