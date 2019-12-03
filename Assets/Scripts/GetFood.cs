@@ -7,11 +7,14 @@ public class GetFood : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         string triggerName = other.gameObject.name;
-        Debug.Log(triggerName);
+
         if (triggerName == "TeaserTrigger") {
-            Debug.Log(other.gameObject.transform.parent);
+            Debug.Log("Human collided with food");
             other.gameObject.transform.parent.gameObject.GetComponent<Teaser>().RpcResetTeaser();
+            Transform avatarTransform = gameObject.transform.parent;
+            int playerIndex = NetworkPlayerUtilities.PlayerIndex(avatarTransform.parent.parent.gameObject);
+            GameObject networkGameController = GameObject.Find("NetworkGameController");
+            networkGameController.GetComponent<NetworkGameController>().IncrementHumanScore(playerIndex);
         };
-        
     }
 }

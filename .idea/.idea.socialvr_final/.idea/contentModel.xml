@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\SQ\.Rider2019.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\SQ\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_socialvr_final.462226123.00" t="ExcludeRecursive" />
-    <e p="C:\Users\SQ\Desktop\socialvr_final" t="IncludeRecursive">
+    <e p="C:\Users\micro01\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\micro01\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_socialvr_final.-2022747802.00" t="ExcludeRecursive" />
+    <e p="C:\Users\micro01\Desktop\socialvr_final" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
@@ -1686,10 +1686,12 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="GetFood.cs" t="Include" />
           <e p="Hook.cs" t="Include" />
           <e p="NetworkedGameManager.cs" t="Include" />
           <e p="NetworkedObject.cs" t="Include" />
           <e p="NetworkedPlayer.cs" t="Include" />
+          <e p="NetworkGameController.cs" t="Include" />
           <e p="NetworkPlayer.cs" t="Include" />
           <e p="NetworkPlayerItemActions.cs" t="Include" />
           <e p="NetworkPlayerKeyboardMovement.cs" t="Include" />
@@ -1697,6 +1699,7 @@
           <e p="NetworkPlayerUtilities.cs" t="Include" />
           <e p="NetworkPlayerVrMovement.cs" t="Include" />
           <e p="NetworkSetup.cs" t="Include" />
+          <e p="Teaser.cs" t="Include" />
         </e>
       </e>
       <e p="Mirror.Authenticators.csproj" t="IncludeRecursive" />
