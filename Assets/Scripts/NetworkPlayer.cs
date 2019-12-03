@@ -35,13 +35,20 @@ public class NetworkPlayer : NetworkBehaviour
             }
         } else
         {
+            NPU.PlayerCenterEyeAnchor(gameObject).GetComponent<Camera>().enabled = false;
+            NPU.PlayerCenterEyeAnchor(gameObject).GetComponent<AudioListener>().enabled = false;
             wrapper.transform.Find("Hands").gameObject.SetActive(false);
-            wrapper.transform.Find("OVRCameraRig").gameObject.SetActive(false);
-            // NPU.PlayerCenterEyeAnchor(gameObject).GetComponent<Camera>().enabled = false;
-            // NPU.PlayerCenterEyeAnchor(gameObject).GetComponent<AudioListener>().enabled = false;
+            var ovrCameraRig = wrapper.transform.Find("OVRCameraRig").gameObject;
+            ovrCameraRig.GetComponent<OVRCameraRig>().enabled = false;
+            ovrCameraRig.GetComponent<OVRHeadsetEmulator>().enabled = false;
         }
 
-        Transform startPoint = GameObject.Find(playerType + "StartPoint").transform;
+        string order = "";
+        if (playerType == "Human") {
+            order = (NPU.PlayerIndex(gameObject) + 1).ToString();
+        }
+        Transform startPoint = GameObject.Find(playerType + order + "StartPoint").transform;
+        Debug.Log(playerType + order + "StartPoint");
         if (startPoint)
         {
             transform.parent = startPoint.parent;

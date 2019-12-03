@@ -5,7 +5,7 @@ public class NetworkPlayerUtilities : MonoBehaviour
 {
     public static string[] PlayerTypes()
     {
-        string[] playerTypes = { "Cat", "Human1", "Human2", "God" };
+        string[] playerTypes = { "Cat", "Human", "Human", "God" };
         return playerTypes;
     }
 
@@ -23,12 +23,13 @@ public class NetworkPlayerUtilities : MonoBehaviour
         return PlayerType(localPlayer.gameObject);
     }
 
+    public static int PlayerIndex(GameObject player) {
+        return Array.IndexOf(Players(), player.GetComponent<NetworkPlayer>());
+    }
+
     public static string PlayerType(GameObject player)
     {
-    
-        int playerIndex = Array.IndexOf(Players(), player.GetComponent<NetworkPlayer>());
-        return PlayerTypes()[playerIndex];    
-        
+        return PlayerTypes()[PlayerIndex(player)];    
     }
 
     public static GameObject PlayerCenterEyeAnchor(GameObject player)
