@@ -12,7 +12,7 @@ public class NetworkPlayerItemActions : NetworkBehaviour
 
     void Update()
     {
-        if (!Input.GetKeyDown("space"))
+        if (!Input.GetMouseButtonDown(0))
             return;
         if (!(NetworkPlayerUtilities.LocalPlayerType() == "Cat" && isLocalPlayer))
             return;

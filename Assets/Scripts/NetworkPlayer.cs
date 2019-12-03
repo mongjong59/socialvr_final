@@ -20,13 +20,25 @@ public class NetworkPlayer : NetworkBehaviour
             playerType = NPU.PlayerType(gameObject);
         }
 
-        transform.Find(playerType).gameObject.SetActive(true);
-
-        // disable camera of non-local player
-        if (!isLocalPlayer)
+        GameObject wrapper = transform.Find(playerType).gameObject;
+        wrapper.SetActive(true);
+        
+        if (isLocalPlayer)
         {
-            NPU.PlayerCenterEyeAnchor(gameObject).GetComponent<Camera>().enabled = false;
-            NPU.PlayerCenterEyeAnchor(gameObject).GetComponent<AudioListener>().enabled = false;
+            wrapper.transform.Find("Avatar").gameObject.SetActive(false);
+            
+            if (playerType.StartsWith("Human"))
+            {
+                // GameObject.Find("ControlRoom").SetActive(false);
+                Debug.Log(GameObject.Find("Simeowlation").transform.Find("HumanView"));
+                GameObject.Find("Simeowlation").transform.Find("HumanView").gameObject.SetActive(true);
+            }
+        } else
+        {
+            wrapper.transform.Find("Hands").gameObject.SetActive(false);
+            wrapper.transform.Find("OVRCameraRig").gameObject.SetActive(false);
+            // NPU.PlayerCenterEyeAnchor(gameObject).GetComponent<Camera>().enabled = false;
+            // NPU.PlayerCenterEyeAnchor(gameObject).GetComponent<AudioListener>().enabled = false;
         }
 
         Transform startPoint = GameObject.Find(playerType + "StartPoint").transform;
@@ -37,12 +49,7 @@ public class NetworkPlayer : NetworkBehaviour
             transform.localRotation = startPoint.localRotation;
         }
 
-        if (playerType.StartsWith("Human"))
-        {
-            // GameObject.Find("ControlRoom").SetActive(false);
-            Debug.Log(GameObject.Find("Simeowlation").transform.Find("HumanView"));
-            GameObject.Find("Simeowlation").transform.Find("HumanView").gameObject.SetActive(true);
-        }
+
         //    GameObject.FindWithTag("Control Room").transform.localScale *= 10;
         //    transform.localScale *= 0.1f;
         //    if (playerType == PLAYER_TYPES[1])
