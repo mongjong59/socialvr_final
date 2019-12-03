@@ -5015,13 +5015,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4078737491672394481}
-  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071067}
-  m_LocalPosition: {x: 0.045, y: 0.04, z: 0}
-  m_LocalScale: {x: 0.013691953, y: 0.013691953, z: 0.013691955}
+  m_LocalRotation: {x: -0.14530969, y: -0.68925315, z: -0.7012408, w: 0.10989369}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 2350199618252482030}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -93.03, y: -98.3, z: -60.9}
 --- !u!33 &1212741095877771664
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6080,13 +6080,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4616953353223748175}
-  m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071067}
-  m_LocalPosition: {x: -0.043, y: 0.047, z: 0}
-  m_LocalScale: {x: 0.013691953, y: 0.013691953, z: 0.013691955}
+  m_LocalRotation: {x: -0.39629886, y: 0.6609032, z: 0.6334786, w: 0.06970731}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 2138913125924048334}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -116.8, y: 65.4, z: 75}
 --- !u!33 &6111762615998524960
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6836,7 +6836,7 @@ MonoBehaviour:
       swivelOffset: 0
       wristToPalmAxis: {x: 0, y: 1, z: 0}
       palmToThumbAxis: {x: -1, y: -0, z: -0}
-      armLengthMlp: 0.1
+      armLengthMlp: 1
       stretchCurve:
         serializedVersion: 2
         m_Curve: []
@@ -6856,7 +6856,7 @@ MonoBehaviour:
       swivelOffset: 0
       wristToPalmAxis: {x: 0, y: 1, z: 0}
       palmToThumbAxis: {x: 1, y: 0, z: 0}
-      armLengthMlp: 0.1
+      armLengthMlp: 1
       stretchCurve:
         serializedVersion: 2
         m_Curve: []
@@ -12099,6 +12099,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Avatar
+      objectReference: {fileID: 0}
+    - target: {fileID: 4639913086390258137, guid: 4b76307a73b984ddb8abaa7b16d9505d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8520548289537162186, guid: 4b76307a73b984ddb8abaa7b16d9505d,
         type: 3}
