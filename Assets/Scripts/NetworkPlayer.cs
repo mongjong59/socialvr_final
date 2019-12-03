@@ -8,10 +8,11 @@ public class NetworkPlayer : NetworkBehaviour
     public enum DebugPlayerType { None, Cat, Human, God }
     public DebugPlayerType debugPlayerType;
 
-    [SyncVar] public int[] scores = { 0, 0, 0 };
+    // [SyncVar] public int[] scores = { 0, 0, 0 };
 
     void Start()
     {
+        Debug.Log(GameObject.Find("TeaserTrigger").transform.parent.gameObject.GetComponent<Teaser>());
         string playerType;
         if (debugPlayerType != DebugPlayerType.None)
         {
@@ -50,20 +51,21 @@ public class NetworkPlayer : NetworkBehaviour
             order = NPU.PlayerIndex(gameObject).ToString();
         }
         Debug.Log(playerType + order + "StartPoint");
-        Transform startPoint = GameObject.Find(playerType + order + "StartPoint").transform;
+        var startPoint = GameObject.Find(playerType + order + "StartPoint");
         
         if (startPoint)
         {
-            transform.parent = startPoint.parent;
-            transform.localPosition = startPoint.localPosition;
-            transform.localRotation = startPoint.localRotation;
+            var startPointTransform = startPoint.transform;
+            transform.parent = startPointTransform.parent;
+            transform.localPosition = startPointTransform.localPosition;
+            transform.localRotation = startPointTransform.localRotation;
         }
 
         // Debug.Log(GameObject.Find("Rod").GetComponent<NetworkIdentity>().hasAuthority);
     }
 
-    [Command]
-    public void CmdIncrementScore(int index) {
-        scores[index] += 1;
-    }
+    // [Command]
+    // public void CmdIncrementScore(int index) {
+    //    scores[index] += 1;
+    // }
 }

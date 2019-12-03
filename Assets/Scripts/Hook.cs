@@ -4,27 +4,18 @@ using UnityEngine;
 
 public class Hook : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        // GetComponent<Rigidbody>().isKinematic = !isLocalPlayer;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         string triggerName = other.gameObject.name;
         Debug.Log(triggerName);
-        GameObject activeChild = transform.Find(triggerName).gameObject;
-        foreach (Transform child in transform)
+        var food = GameObject.Find("Food").transform;
+        var activeFood = food.Find(triggerName);
+        if (!activeFood) return; 
+        foreach (Transform child in food)
         {
             child.gameObject.SetActive(false);
         }
-        activeChild.SetActive(true);
+        activeFood.gameObject.SetActive(true);
+        gameObject.SetActive(false);
     }
 }
