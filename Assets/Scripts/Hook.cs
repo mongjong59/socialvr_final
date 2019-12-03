@@ -19,6 +19,7 @@ public class Hook : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         string triggerName = other.gameObject.name;
+        Debug.Log(triggerName);
         GameObject activeChild = transform.Find(triggerName).gameObject;
         foreach (Transform child in transform)
         {

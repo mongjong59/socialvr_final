@@ -8,6 +8,8 @@ public class NetworkPlayer : NetworkBehaviour
     public enum DebugPlayerType { None, Cat, Human, God }
     public DebugPlayerType debugPlayerType;
 
+    [SyncVar] public int[] scores = { 0, 0, 0 };
+
     void Start()
     {
         string playerType;
@@ -57,24 +59,11 @@ public class NetworkPlayer : NetworkBehaviour
             transform.localRotation = startPoint.localRotation;
         }
 
-
-        //    GameObject.FindWithTag("Control Room").transform.localScale *= 10;
-        //    transform.localScale *= 0.1f;
-        //    if (playerType == PLAYER_TYPES[1])
-        //    {
-        //        human1.SetActive(true);
-        //        transform.localPosition = new Vector3(0, 0, 0);
-        //    }
-        //    if (playerType == PLAYER_TYPES[2])
-        //    {
-        //        human2.SetActive(true);
-        //        transform.localPosition = new Vector3(0, 0, 0);
-        //    }
-
-        //}
-
-
-
         // Debug.Log(GameObject.Find("Rod").GetComponent<NetworkIdentity>().hasAuthority);
+    }
+
+    [Command]
+    public void CmdIncrementScore(int index) {
+        scores[index] += 1;
     }
 }
